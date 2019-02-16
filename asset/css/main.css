@@ -1,0 +1,1710 @@
+@font-face {
+  font-family: proxima-thin;
+  src: url('../font/Proxima Nova Thin.ttf');
+}
+
+@font-face {
+  font-family: proxima-semibold; src: url('../font/Proxima Nova Semibold.ttf');
+}
+
+@font-face {
+  font-family: proxima-black; src: url('../font/Proxima Nova Alt Black.ttf');
+}
+
+@font-face {
+  font-family: proxima-bold; src: url('../font/Proxima Nova Alt Bold.ttf');
+}
+
+@font-face {
+  font-family: proxima-light; src: url('../font/Proxima Nova Light.ttf');
+}
+
+@font-face {
+  font-family: proxima-regular; src: url('../font/Proxima Nova Alt Regular.ttf');
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: black;
+  color: white !important;
+}
+
+/* Defining each section background and styles
+* --------------------------------------- */
+#introduction {
+  background-color: white;
+}
+
+#blank-dao {
+  background-color: white;
+}
+
+#possibilitie {
+  background-color: white;
+}
+
+#structure-genesis {
+  background-color: white;
+}
+
+#buy-token {
+  background-color: white;
+}
+
+#claim-rewards {
+  background-color: white;
+}
+
+#road-map {
+  background-color: white;
+}
+
+#blogs {
+  background-image: url(../image/blogs.jpg);
+}
+
+/*Adding background for the slides
+* --------------------------------------- */
+#slide1 {
+  background-image: url(imgs/bg2.jpg);
+  padding: 6% 0 0 0;
+}
+
+#slide2 {
+  background-image: url(imgs/bg5.jpg);
+  padding: 6% 0 0 0;
+}
+
+/* Bottom menu
+* --------------------------------------- */
+#infoMenu li a {
+  color: #fff;
+}
+
+.header {
+  overflow: inherit;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 999;
+  box-shadow: 0 2px 13px rgba(0, 0, 0, 0);
+  transition: all 0.5s ease;
+  transition-delay: 1s;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 5%;
+  background-color: white;
+}
+
+.header.header-inner {
+  transition: all 1s ease;
+}
+
+.main_logo .main-logo-bl {
+  height: 4vmin;
+  width: 11vmin;
+  opacity: 1;
+  transition: all 1s ease;
+  transition-delay: 1s;
+}
+
+.main_logo .main-logo-wh {
+  position: absolute;
+  height: 3vmin;
+  width: 3vmin;
+  opacity: 0;
+  transition: all 1s ease;
+  transition-delay: 1s;
+}
+
+.main_logo {
+  opacity: 0;
+  color: #2e3666;
+  font-family: proxima-bold;
+  transition: all 0.5s ease;
+  transition-delay: 1s;
+  margin-left: 20%;
+}
+
+.main_logo_visible {
+  opacity: 1;
+  transition: all 0.5s ease;
+  transition-delay: 1s;
+  font-size: 1.7vmin;
+}
+
+.menu-items {
+  margin-left: 30%;
+}
+
+.header .menu-toggle {
+  display: none;
+  flex-basis: calc(34px + 40px);
+  height: 100%;
+  align-items: center;
+  margin-right: -20px;
+  justify-content: center;
+}
+
+.header .menu-toggle .hamburger {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  flex-basis: 34px;
+  height: 1.25em;
+  width: 1.5em;
+}
+
+.header .nav_header_block {
+  display: flex;
+  flex: 0;
+  position: relative;
+  background-color: transparent;
+}
+
+.menu-main-navigation-container {
+  height: auto;
+  opacity: 1;
+  align-items: center;
+}
+
+.header .menu {
+  list-style: none;
+  display: flex;
+}
+
+.header .menu-item {
+  margin: 0 33px 0 0;
+  display: inline-flex;
+  padding: 0;
+}
+
+.header .menu-item a {
+  color: #111A44;
+  font-size: 12px;
+  font-family: proxima-semibold;
+  line-height: 25px;
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: .5em 0;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  transition: color 0.5s ease;
+  transition-delay: 1s;
+}
+
+.header .search-form {
+  display: flex;
+}
+
+.header .search-toggle {
+  display: block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #2E2745;
+  background-color: transparent;
+}
+
+.header .form-search__holder {
+  position: absolute;
+  width: 0;
+  top: 50%;
+  right: 50px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding: 0;
+}
+
+.header .form-search__holder .search-input-wrap {
+  position: relative;
+}
+
+.header .form-search__holder .search-input {
+  width: 100%;
+  background-color: transparent;
+  border-bottom: 0;
+  opacity: 0;
+  height: 36px;
+}
+
+.header.scrolled.transparent {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.94);
+  height: 76px;
+  box-shadow: 0 2px 13px rgba(0, 0, 0, 0.04);
+}
+
+
+/* Centered texts in each section
+* --------------------------------------- */
+.section {
+  text-align: center;
+  background-size: cover;
+}
+/* Backgrounds will cover all the section
+* --------------------------------------- */
+.slide {
+  background-size: cover;
+}
+
+/* Introduction Section
+* --------------------------------------- */
+
+.main .introduction .content .head .title {
+  width: 40%;
+  left: 20px;
+}
+
+.main .introduction .content .head {
+  margin-top: 7%;
+}
+
+.main .introduction .content .description {
+  font-family: proxima-light;
+  font-size: 10vmin;
+}
+
+.main .introduction .content .read-more {
+  height: 10vmin;
+  margin: 12vmin;
+}
+
+.main .introduction .content .read-more .btn {
+  font-family: proxima-regular;
+  font-size: 2.3vmin;
+  margin: 2vmin;
+  color: #111A44;
+  width: 200px;
+  height: 7vmin;
+  border-color: #111A44;
+}
+
+/* Whats Dao Section
+* --------------------------------------- */
+
+.main .blank-dao .content .head .title {
+  font-family: proxima-semibold;
+  font-size: 9vmin;
+  /* border-bottom: 2px solid rgba(17, 26, 68, 0.2); */
+  ;
+}
+
+.main .blank-dao .content .description .text-pre {
+  font-family: proxima-light;
+  font-size: 3vmin;
+  text-align: center;
+  text-justify: inter-character;
+  -moz-text-align-last: center;
+ /* Code for Firefox */
+  text-align-last: center;
+  /* max-width: 90vmin; */
+  margin: 2%;
+  overflow: hidden;
+}
+
+.main .blank-dao .content .description .text-pre .special {
+  font-family: proxima-semibold;
+  font-style: italic;
+}
+
+.main .blank-dao .content .read-more {
+  height: auto;
+  margin: 3vmin;
+}
+
+.main .blank-dao .content .aragon {
+  height: 5vmin;
+  top: -15%;
+  position: relative;
+}
+
+.main .blank-dao .content .read-more .btn {
+  font-family: proxima-regular;
+  font-size: 2.3vmin;
+  /* margin: 2vmin; */
+  color: #111A44;
+  width: auto;
+  height: 7vmin;
+  border-color: #111A44;
+  text-align: center;
+  padding-top: 1.5vmin;
+}
+
+/* Possibilitie Section
+* --------------------------------------- */
+.main .possibilitie .content .head .title {
+  font-family: proxima-regular;
+  font-size: 9vmin;
+  margin-bottom: 25%;
+}
+
+.main .possibilitie .head .logo {
+  margin: 3vmin;
+}
+
+.main .possibilitie .head .logo img {
+  width: 15vmin;
+  height: auto;
+}
+
+.main .possibilitie .content .description {
+  font-family: proxima-light;
+  font-size: 2vmin;
+}
+
+.p-chapter {
+  list-style-image: none;
+  list-style: none;
+  background-color: transparent;
+}
+
+.description .poss-tb .chapter {
+  color: black;
+  font-family: proxima-thin;
+  font-size: 2.5vmin;
+}
+
+.description .poss-tb .left-td {
+  padding-left: 10%;
+}
+
+.description .poss-tb .left-td .coll-child {
+  margin-top: -15px;
+}
+
+.description .poss-tb .left-td .coll-parent {
+  font-family: proxima-bold;
+  font-size: 3vmin;
+}
+
+.description .poss-tb .left-td .coll-parent:hover {
+  cursor: pointer;
+}
+
+.description .poss-tb .left-td .coll-parent .coll-title {
+  font-family: proxima-semibold;
+  font-size: 2.5vmin !important;
+}
+
+.description .poss-tb .right-td {
+}
+
+.description .poss-tb #text-content {
+  width: 80%;
+  display: flex;
+  font-size: 2.5vmin;
+  text-align: justify;
+}
+
+.description .poss-tb .li-head {
+  text-align: left;
+}
+
+.description .poss-tb .list-title {
+  text-align: left;
+}
+
+.main .possibilitie .content .read-more {
+  height: 1vmin;
+  width: 80%;
+  margin-top: 30px;
+}
+
+.main .possibilitie .content .read-more .btn {
+  float: right;
+  font-family: proxima-regular;
+  font-size: 1.5vmin;
+  width: auto;
+  height: auto;
+}
+
+
+/* Genesis Section
+* --------------------------------------- */
+
+.main .structure-genesis .content .head .title {
+  font-family: proxima-thin;
+  color: white;
+  font-size: 10vmin;
+  margin-bottom: 5%;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.main .structure-genesis .head .logo {
+  margin: 3vmin;
+}
+
+.main .structure-genesis .head .logo img {
+  width: 15vmin;
+  height: auto;
+}
+
+.main .structure-genesis .content .description {
+  font-family: proxima-light;
+  font-size: 2vmin;
+  width: 30%;
+  height: 50%;
+}
+
+.structure-genesis .content .description .box {
+  background: #caccd6;
+  max-width: 400px;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-sizing: border-box;
+  padding-top: 15px;
+  padding-bottom: 35px;
+  text-align: center;
+}
+
+.structure-genesis .content .description .box p {
+  margin-top: 8%;
+  font-size: 2vmin;
+  background-color: #bec1ce;
+  width: 108%;
+  left: -15px !important;
+  font-family: proxima-light;
+  position: inherit;
+}
+
+.structure-genesis .sg-tb {
+  margin-top: 5%;
+  box-shadow: 0px -1px 17px 5px rgb(190, 193, 206), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.structure-genesis .sg-tb th {
+}
+
+.structure-genesis .sg-tb td {
+  border: 1px solid #331f1f2e;
+}
+
+.structure-genesis .sg-tb td li {
+  text-align: left;
+  font-family: proxima-light;
+}
+
+.structure-genesis .under-line-txt {
+  font-size: 3vmin;
+  margin-bottom: 1%;
+  border-bottom: 2px solid rgba(17, 26, 68, 0.2);
+}
+
+.main .structure-genesis .content .read-more {
+  height: 1vmin;
+  margin: 3vmin;
+}
+
+.main .structure-genesis .content .read-more .btn {
+  font-family: proxima-regular;
+  font-size: 2.3vmin;
+  margin: 2vmin;
+  width: 22vmin;
+  height: 7vmin;
+}
+
+
+
+
+
+/* Buy Tokens Section
+* --------------------------------------- */
+
+.main .buy-token .content .head .title {
+  font-family: proxima-regular;
+  font-size: 9vmin;
+  margin-bottom: 15%;
+}
+
+.main .buy-token .head .logo {
+  margin: 3vmin;
+}
+
+.main .buy-token .head .logo img {
+  width: 15vmin;
+  height: auto;
+}
+
+.main .buy-token .content .description {
+  font-family: proxima-light;
+  font-size: 2vmin;
+}
+
+.buy-token .side-content {
+}
+
+.buy-token .side-content.left-co {
+}
+
+.buy-token .side-content.right-co {
+}
+
+.buy-token .side-content .head {
+  font-family: proxima-semibold;
+  font-size: 5vmin;
+}
+
+.buy-token .side-content .t-1 {
+  font-family: proxima-light;
+  font-size: 2vmin;
+  top: 0;
+  margin: auto;
+}
+
+.buy-token .side-content .price {
+  font-family: proxima-regular;
+  font-size: 2vmin;
+}
+
+.buy-token .middle-content .price {
+  font-family: proxima-regular;
+  font-size: 10vmin;
+  margin: -10px -10px -30px -10px;
+}
+
+.buy-token .c-price {
+  font-family: proxima-light;
+  font-size: 3.5vmin;
+}
+
+.buy-token .c-price-num {
+  font-family: proxima-light;
+  font-size: 12vmin;
+  letter-spacing: 1px;
+}
+
+.buy-token .price-abbr {
+  font-family: proxima-light;
+  font-size: 4vmin;
+  margin-top: 31%;
+}
+
+.buy-token .right-slide {
+	/*margin-right: 20%;*/
+	/*padding-right: 25%;*/
+  ;
+}
+
+.buy-token .left-slide {
+	/*margin-left: 20%;*/
+	/*padding-left: 25%;*/
+  ;
+}
+
+.buy-token .right-slide .c-price-num {
+  font-family: proxima-light;
+  font-size: 9vmin;
+}
+
+.buy-token .right-slide .price-abbr {
+  font-family: proxima-light;
+  font-size: 4vmin;
+  margin-top: 24%;
+}
+
+.buy-token .description .middle-content a {
+  font-family: proxima-thin;
+  font-size: 3vmin;
+  color: black;
+}
+
+.buy-token .content .description .v-line {
+  width: 3px;
+  height: 50vmin;
+  margin: auto;
+  background-color: black;
+}
+
+.buy-token .content .description .box {
+  background: #caccd6;
+  max-width: 400px;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-sizing: border-box;
+  padding-top: 15px;
+  padding-bottom: 35px;
+  text-align: center;
+}
+
+.main .buy-token .read-more {
+}
+
+.main .buy-token .read-more .btn {
+  font-family: proxima-light;
+  font-size: 3vmin;
+  margin: 2vmin;
+  width: 30vmin;
+  height: auto;
+  color: black;
+}
+
+
+
+
+
+/* Claim Rewards Section
+* --------------------------------------- */
+.main .claim-rewards .content .head .title {
+  font-family: proxima-regular;
+  font-size: 9vmin;
+  margin-bottom: 15%;
+}
+
+.main .claim-rewards .head .logo {
+  margin: 3vmin;
+}
+
+.main .claim-rewards .head .logo img {
+  width: 15vmin;
+  height: auto;
+}
+
+.main .claim-rewards .content .description {
+  font-family: proxima-light;
+  font-size: 2vmin;
+  width: 30%;
+  height: 50%;
+}
+
+.mySlides {
+  width: 100%;
+  max-width: 1000px;
+  position: absolute;
+}
+
+.claim-rewards .description .s-step {
+  font-family: proxima-thin;
+  font-size: 6vmin;
+  float: left;
+}
+
+.claim-rewards .description .s-title {
+  font-family: proxima-regular;
+  font-size: 3.2vmin;
+  float: left;
+  text-align: left;
+}
+
+.claim-rewards .description .step-text {
+  font-family: proxima-thin;
+  font-size: 3vmin;
+  float: left;
+  text-align: justify;
+}
+
+.claim-rewards .description .btn-box {
+  /*top: 50px;*/
+  float: right;
+  /*position: fixed;*/
+  /*display: block;*/
+  /*right: 26%;*/
+  z-index: 1000;
+}
+
+.claim-rewards .description .btn-box:hover {
+  cursor: pointer;
+}
+
+.claim-rewards .description .s-navigator {
+  font-family: proxima-light;
+  font-size: 3.8vmin;
+  float: right;
+  background-color: #000;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.claim-rewards .description .step-extra {
+  margin: 110px 0 70px 0;
+}
+
+.claim-rewards .description .step-extra img {
+  -webkit-filter: grayscale(100%);
+ /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.claim-rewards .description .step-extra div {
+  float: left;
+}
+
+.claim-rewards .description .s-head {
+}
+
+.main .claim-rewards .content .read-more {
+  height: 1vmin;
+  margin: 3vmin;
+}
+
+.main .claim-rewards .content .read-more .btn {
+  font-family: proxima-regular;
+  font-size: 2.3vmin;
+  margin: 2vmin;
+  width: 22vmin;
+  color: white;
+  border-color: white;
+}
+
+.claim-rewards .content .description .box p {
+  margin-top: 2%;
+  font-size: 2.6vmin;
+  background-color: #bec1ce;
+  width: 103%;
+  left: -17px !important;
+  font-family: proxima-light;
+  position: inherit;
+}
+
+.claim-rewards .sg-tb {
+  margin-top: 5%;
+  box-shadow: 0px -1px 17px 5px rgb(190, 193, 206), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.user-dashboard {
+  position: absolute;
+  z-index: 6;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  left: 0 !important;
+  right: 0;
+  top: 82%;
+  margin: 0 auto !important;
+}
+
+.user-dashboard a {
+  color: black;
+  font-size: 3vmin;
+  font-family: proxima-light;
+}
+
+.claim-rewards .sg-tb td {
+  border: 1px solid #331f1f2e;
+}
+
+.claim-rewards .sg-tb td li {
+  text-align: left;
+  font-family: proxima-light;
+}
+
+.claim-rewards .under-line-txt {
+  font-size: 3vmin;
+  margin-bottom: 1%;
+  border-bottom: 2px solid rgba(17, 26, 68, 0.2);
+}
+
+.main .claim-rewards .content .read-more {
+  height: 1vmin;
+  margin: 3vmin;
+}
+
+.main .claim-rewards .content .read-more .btn {
+  font-family: proxima-regular;
+  font-size: 2.3vmin;
+  margin: 2vmin;
+  width: 22vmin;
+  /* height: 7vmin; */
+  color: white;
+  border-color: white;
+}
+/* Road Map Section
+* --------------------------------------- */
+
+.main .road-map .content .head .title {
+  font-family: proxima-regular;
+  font-size: 9vmin;
+  margin-bottom: 30%;
+}
+
+/* Blog Section
+* --------------------------------------- */
+
+.main .blogs .content .head .title {
+  font-family: proxima-light;
+  font-size: 6vmin;
+  color: #4988d6;
+  border-bottom: 2px solid rgba(17, 26, 68, 0.2);
+  max-width: 7%;
+  /* margin: auto; */
+  ;
+}
+
+.main .blogs .blog-pg {
+  margin: -70px 0 0 0;
+	/* padding: 0 0 0 0; */
+  ;
+}
+
+.section-btn:hover {
+  color: #21b3e8;
+  background: #fff;
+}
+
+.section-img {
+  width: 50%;
+  float: left;
+}
+
+.section-img img {
+  width: 80%;
+}
+
+.section-row {
+  padding-bottom: 5em;
+}
+
+.section-foot {
+  background: #f5f5f5;
+  padding-bottom: 5em;
+}
+
+.aside {
+  height: 50% !important;
+  padding: 0 0 0 0;
+}
+
+.aside-top {
+  color: #7b7b7b;
+  font-family: Helvetica-Bold;
+  text-align: center;
+}
+
+.aside-h2 {
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.aside-div {
+  background: #fff;
+}
+
+.blog-carousel {
+  padding-top: 2em;
+}
+
+.owl-prev {
+  position: absolute;
+  left: -50px;
+  top: 50%;
+}
+
+.owl-prev i {
+  padding: 3px 11px;
+  border: 1px solid rgba(0,0,0,0);
+  color: #8e98a5;
+  transition: .5s;
+  font-size: 2em;
+  border-radius: 50%;
+}
+
+.owl-prev i:hover {
+  border-color: #8e98a5;
+}
+
+.owl-next {
+  position: absolute;
+  right: -50px;
+  float: right;
+  top: 50%;
+}
+
+.owl-next i {
+  padding: 3px 11px;
+  border: 1px solid rgba(0,0,0,0);
+  transition: .5s;
+  font-size: 2em;
+  border-radius: 50%;
+  color: #8e98a5;
+}
+
+.owl-next i:hover {
+  border-color: #8e98a5;
+}
+
+.blog-option {
+  width: 100%;
+  float: left;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.optin-img img {
+  width: 100%;
+  max-height: 160px;
+}
+
+.option-txt {
+  padding: 2em;
+  width: 100%;
+  float: left;
+  text-align: left;
+  color: #444444;
+  font-size: small;
+}
+
+.option-txt h4 {
+  margin: 0;
+  height: 40px;
+  font-family: proxima-regular;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.option-txt p {
+  height: auto;
+  margin: 0;
+  font-family: proxima-regular;
+}
+
+.option-txt a {
+  font-family: proxima-regular;
+  font-size: .9em;
+  margin-top: 4em;
+  color: #111A44;
+  width: 100px;
+  text-align: center;
+  border-color: #111A44;
+  padding: 5px 0;
+  float: right;
+}
+
+.option-txt a:hover {
+  color: #ffffff;
+  background: #4988d6;
+  border-color: #ffffff;
+}
+
+.owl-carousel .owl-nav.disabled {
+  display: block;
+}
+
+.carousel-row {
+  height: 55vmin !important;
+  width: 90% !important;
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .carousel-row {
+    height: 100% !important;
+    width: 90% !important;
+		/* margin: 5em 0 0; */
+    ;
+  }
+}
+
+.article {
+  background: #f5f5f5;
+  padding: 60px 0 145px;
+}
+
+.team-div {
+  width: 100%;
+  float: left;
+}
+
+.team-img {
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+
+.team-img img {
+  width: 50% !important;
+  margin: 0 auto;
+  border-radius: 50%;
+  transition: .3s;
+  border: 5px solid rgba(0,0,0,0);
+}
+
+.team-div:hover img {
+  border-color: #badeeb;
+}
+
+.team-name {
+  width: 100%;
+  float: left;
+  margin-top: 1em;
+  text-align: center;
+  color: #525557;
+  font-family: proxima-regular;
+  font-size: 1.5em;
+  transition: .3s;
+}
+
+.team-div:hover .team-name {
+  color: #30a6d1;
+}
+/*FOOTER*/
+.footer {
+  background: #000;
+  padding-top: 30px;
+  height: 100%;
+}
+
+.foot-sp {
+  margin-left: 0;
+  margin-bottom: 20px;
+  width: 40px;
+  height: 3px;
+}
+
+.foot-con {
+  font-family: proxima-light;
+  color: #fff;
+}
+
+.foot-con .foot-logo {
+  height: 8vmin;
+  margin-right: 30vmin;
+  margin-bottom: 13vmin;
+  filter: invert(100%);
+}
+
+.foot-con .overview-s p {
+  text-align: left;
+  font-family: proxima-light;
+  padding-bottom: 0;
+  margin-bottom: 1vmin;
+}
+
+.foot-con .overview-s p a {
+  color: #ffffff;
+}
+
+.foot-con .more-info p {
+  text-align: left;
+  font-family: proxima-light;
+  padding-bottom: 0;
+  margin-bottom: 1vmin;
+}
+
+.foot-con .more-info p a {
+  color: #ffffff;
+}
+
+.foot-con .social p {
+  text-align: left;
+  font-family: proxima-light;
+  padding-bottom: 0;
+}
+
+.foot-con h4 {
+  color: #fff;
+  text-align: left;
+  font-size: 1.1em;
+}
+
+.foot-con i {
+  margin-right: 1em;
+  font-size: 1.5em;
+  vertical-align: middle;
+}
+
+.foot-con p {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.ul-foot {
+  width: 100%;
+  float: left;
+  padding: 0;
+}
+
+.li-foot {
+  display: inline;
+  width: 20%;
+  float: left;
+}
+
+.li-foot a {
+  text-decoration: none;
+}
+
+.li-foot i {
+  color: #b6b8b9;
+  padding: 12px 13px;
+  font-size: 2vmin;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0);
+}
+
+.li-foot i:hover {
+  border-color: #b6b8b9;
+}
+
+#padd {
+  padding: 12px 15px;
+}
+
+.p-foot {
+  width: 80%;
+  float: left;
+  margin-top: 43px;
+  font-size: 1.1em;
+  font-family: proxima-light;
+}
+
+.footer-pro {
+  width: 100%;
+  float: left;
+}
+
+.footer-img {
+  width: 30%;
+  float: left;
+}
+
+.footer-img img {
+  width: 85px;
+  height: 55px;
+}
+
+.footer-txt {
+  width: 60%;
+  float: left;
+  padding: 1em 0 0 0;
+}
+
+.footer-txt h4 {
+  color: #fff;
+  margin: 0;
+  font-family: Helvetica;
+  font-family: 1.1em;
+}
+
+.footer-txt p {
+  font-family: proxima-light;
+  font-size: .9em;
+}
+
+.foot-p-mark {
+  margin-top: 45px;
+}
+
+.slideshow-container img {
+  vertical-align: middle;
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  height: 350px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+/* Caption text */
+.text {
+  color: black;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: black;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.claim-rewards .sl-nav {
+  position: absolute;
+  z-index: 4;
+  opacity: 1;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  left: 0 !important;
+  right: 0;
+  top: 90%;
+  margin: 0 auto !important;
+}
+
+.claim-rewards .sl-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.claim-rewards .sl-nav ul li {
+  display: inline-block;
+  width: 14px;
+  height: 13px;
+  margin: 7px;
+  position: relative;
+}
+
+.claim-rewards .sl-nav ul li a {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.claim-rewards .sl-nav ul li a span {
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  height: 4px;
+  width: 4px;
+  border: 0;
+  background: #333;
+  left: 50%;
+  top: 50%;
+  margin: -2px 0 0 -2px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.claim-rewards .sl-nav ul li a.m-active span {
+  height: 12px;
+  width: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 100%;
+}
+
+.claim-rewards .sl-nav ul li:hover a span {
+  width: 10px;
+  height: 10px;
+  margin: -5px 0px 0px -5px;
+}
+
+.claim-rewards .sl-nav ul li a .sl-on {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.claim-rewards .sl-bo {
+  bottom: 17px;
+}
+
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.road-map .flex-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.road-map .input-flex-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: 100px;
+  /*max-width: 1000px;*/
+  position: relative;
+  z-index: 0;
+}
+
+.road-map .input {
+  width: 25px;
+  height: 25px;
+  background-color: #000;
+  position: relative;
+  border-radius: 50%;
+}
+
+.road-map .input:hover {
+  cursor: pointer;
+}
+
+.road-map .input:nth-child(1)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #000;
+  width: 0vw;
+  height: 5px;
+  max-width: 0px;
+}
+
+.road-map .input:nth-child(1)::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  background-color: #000;
+  width: 10vw;
+  height: 5px;
+  max-width: 500px;
+}
+
+.road-map .input:last-child::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  background-color: #000;
+  width: 10vw;
+  height: 5px;
+  max-width: 0px;
+}
+
+.road-map .input:last-child::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  right: 50%;
+  transform: translateY(-50%);
+  background-color: #000;
+  width: 10vw;
+  height: 5px;
+  max-width: 500px;
+}
+
+.road-map .input::before, .input::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #000;
+  width: 14vw;
+  height: 5px;
+  max-width: 500px;
+}
+
+.road-map .input::before {
+  left: calc(-4vw + 12.5px);
+}
+
+.road-map .input::after {
+  right: calc(-4vw + 12.5px);
+}
+
+.road-map .input.active {
+  background-color: #000;
+}
+
+.road-map .input.active::before {
+  background-color: #000;
+}
+
+.road-map .input.active::after {
+  background-color: #AEB6BF;
+}
+
+.road-map .input.active span {
+  font-weight: 700;
+}
+
+.road-map .input.active span::before {
+  font-size: 13px;
+}
+
+.road-map .input.active span::after {
+  font-size: 15px;
+}
+
+.road-map .input.active ~ .input, .input.active ~ .input::before, .input.active ~ .input::after {
+  background-color: #AEB6BF;
+}
+
+.road-map .input span {
+  width: 300px;
+  height: 1px;
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  font-family: proxima-light;
+  font-size: 2.5vmin;
+  transform: translate(-50%, -50%);
+}
+
+.road-map .input span::before, .input span::after {
+  visibility: visible;
+  position: absolute;
+  left: 50%;
+}
+
+.road-map .input span::before {
+  content: attr(data-info);
+  top: -90px;
+  width: 70px;
+  transform: translateX(-5px) rotateZ(-45deg);
+  font-family: proxima-regular;
+  font-size: 1.8vmin;
+  text-indent: -10px;
+}
+
+.road-map .description-flex-container {
+  width: 80vw;
+  font-weight: 400;
+  font-size: 22px;
+  margin-top: 100px;
+  max-width: 1000px;
+}
+
+.road-map .description-flex-container p {
+  margin-top: 0;
+  display: none;
+}
+
+.road-map .description-flex-container p.active {
+  display: block;
+}
+
+@media (min-width: 1250px) {
+  .road-map .input::before {
+    left: -37.5px;
+  }
+
+  .road-map .input::after {
+    right: -37.5px;
+  }
+}
+
+@media (max-width: 850px) {
+  .road-map .input {
+    width: 17px;
+    height: 17px;
+  }
+
+  .road-map .input::before, .input::after {
+    height: 3px;
+  }
+
+  .road-map .input::before {
+    left: calc(-4vw + 8.5px);
+  }
+
+  .road-map .input::after {
+    right: calc(-4vw + 8.5px);
+  }
+}
+
+@media (max-width: 600px) {
+  .road-map .flex-parent {
+    justify-content: initial;
+  }
+
+  .road-map .input-flex-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin-top: 15vh;
+  }
+
+  .road-map .input {
+    width: 60px;
+    height: 60px;
+    margin: 0 10px 50px;
+    background-color: #AEB6BF;
+  }
+
+  .road-map .input::before, .input::after {
+    content: none;
+  }
+
+  .road-map .input span {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .road-map .input span::before {
+    top: calc(100% + 5px);
+    transform: translateX(-50%);
+    text-indent: 0;
+    text-align: center;
+  }
+
+  .road-map .input span::after {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #ECF0F1;
+  }
+
+  .road-map .description-flex-container {
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    min-height: 950px;
+  }
+}
+
+.step-box {
+  transition: opacity 2s;
+  opacity: 0.3;
+}
+.step-box.done {
+  transition: opacity 2s;
+  opacity: 1;
+}
+.step-box.active {
+  transition: opacity 2s;
+  opacity: 1;
+}
+
+.m-title {
+  margin-left: 40%;
+}
+
+.modal-input-txt {
+  background-color: black;
+  color: white;
+  width: 100px;
+}
+
+.modal-buy-btn {
+  width: 35%;
+  margin: 5% 0% 0% 35%;
+  font-family: proxima-light;
+  font-size: 2.5vmin;
+}
+
+.sprator {
+  border: 1px solid #e9ecef;
+  width: 1200px;
+  margin-bottom: 3%;
+  margin-top: 1%;
+}
+
+.bdt-step img {
+  margin-top: 5px;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.bdt-step .t-text {
+  font-family: proxima-regular;
+  font-size: 2vmin;
+  color: grayscale;
+  margin-top: 5px;
+}
+
+.bdt-step .active .t-text {
+  font-family: proxima-semibold;
+  font-size: 2.5vmin;
+  color: black;
+}
+
+.bdt-step .step-box .loader {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid black;
+  width: 35px;
+  height: 35px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/*.bdt-step .active .loader {
+  visibility: visible;
+}*/
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,662 @@
+@font-face { font-family: proxima-thin; src: url('../font/Proxima Nova Thin.ttf'); }
+@font-face { font-family: proxima-semibold; src: url('../font/Proxima Nova Semibold.ttf'); }
+@font-face { font-family: proxima-black; src: url('../font/Proxima Nova Alt Black.ttf'); }
+@font-face { font-family: proxima-bold; src: url('../font/Proxima Nova Alt Bold.ttf'); }
+@font-face { font-family: proxima-light; src: url('../font/Proxima Nova Light.ttf'); }
+@font-face { font-family: proxima-regular; src: url('../font/Proxima Nova Alt Regular.ttf'); }
+
+
+
+/*
+light blue 4988d6
+dark blue 3b4654
+grayscale f1f2f4
+ffffff */
+
+
+.header {
+	overflow: inherit;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 120px;
+	box-sizing: border-box;
+	z-index: 999;
+	background-color: transparent;
+	box-shadow: 0 2px 13px rgba(0, 0, 0, 0);
+	/* transition: height 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease, color 1s ease; */
+  transition: all 0.5s ease;
+  transition-delay: 0.5s;
+}
+
+.header .header-inner {
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.header.homepage_header .main_logo img {
+	height: 5vmin;
+	width: 5vmin;
+}
+.header.homepage_header .main_logo {
+	transition: 1s opacity;
+	/* visibility: hidden; */
+	opacity: 0;
+}
+.header.homepage_header .main_logo_visible {
+	transition: 1s opacity;
+	/* visibility: visible; */
+	opacity: 1;
+}
+
+.header .menu-toggle {
+	display: none;
+	flex-basis: calc(34px + 40px);
+	height: 100%;
+	align-items: center;
+	margin-right: -20px;
+	justify-content: center;
+}
+.header .menu-toggle .hamburger {
+	text-decoration: none;
+	position: relative;
+	display: block;
+	flex-basis: 34px;
+	height: 1.25em;
+	width: 1.5em;
+}
+
+.header .nav_header_block {
+	display: flex;
+	flex: 0;
+	position: relative;
+	background-color: transparent;
+}
+.header .menu-main-navigation-container {
+	height: auto;
+	opacity: 1;
+	align-items: center;
+	display: flex;
+}
+.header .menu {
+	list-style: none;
+	display: flex;
+}
+.header .menu-item {
+	margin: 0 33px 0 0;
+	display: inline-flex;
+	padding: 0;
+}
+.header .menu-item a {
+	color: #111A44;
+	font-size: 12px;
+  font-family: proxima-semibold;
+	line-height: 25px;
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+	padding: .5em 0;
+	letter-spacing: .25em;
+	text-transform: uppercase;
+  transition:color 0.5s ease;
+  transition-delay: 1s;
+}
+.header .search-form {
+	display: flex;
+}
+.header .search-toggle {
+	display: block;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	color: #2E2745;
+	background-color: transparent;
+}
+.header .form-search__holder {
+	position: absolute;
+	width: 0;
+	top: 50%;
+	right: 50px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	padding: 0;
+}
+.header .form-search__holder .search-input-wrap {
+	position: relative;
+}
+.header .form-search__holder .search-input {
+	width: 100%;
+	background-color: transparent;
+	border-bottom: 0;
+	opacity: 0;
+	height: 36px;
+}
+.header.scrolled.transparent {
+	background-color: transparent;
+	box-shadow: none;
+}
+.header.scrolled {
+	background-color: rgba(255, 255, 255, 0.94);
+	height: 76px;
+	box-shadow: 0 2px 13px rgba(0, 0, 0, 0.04);
+}
+
+
+/* Centered texts in each section
+* --------------------------------------- */
+.section{
+  text-align:center;
+  background-size: cover;
+}
+/* Backgrounds will cover all the section
+* --------------------------------------- */
+.slide{
+  background-size: cover;
+}
+
+
+/* Introduction Section
+* --------------------------------------- */
+
+.main .introduction .content .head .title{
+  font-family: proxima-light;
+  font-size: 6vmin;
+  color: #4988d6;
+}
+.main .introduction .logo {
+    margin: 3vmin;
+}
+.main .introduction .logo img {
+  width: 20vmin;
+  height: auto;
+}
+.main .introduction .content .description{
+  font-family: proxima-regular;
+  font-size: 3vmin;
+  color: #111A44;
+}
+.main .introduction .content .read-more {
+  height: 10vmin;
+  margin: 3vmin;
+}
+.main .introduction .content .read-more .btn{
+  font-family: proxima-regular;
+  font-size: 2.3vmin;
+  margin: 2vmin;
+  color: #111A44;
+  width: 22vmin;
+  height: 7vmin;
+  border-color: #111A44;
+}
+
+
+/* Our Philosophy Section
+* --------------------------------------- */
+
+.main .our-philosophy .content {
+	padding-top: 4vmin;
+}
+
+.main .our-philosophy .content .head .title{
+  font-family: proxima-light;
+  font-size: 4vmin;
+  color: #4988d6;
+  border-bottom: 2px solid rgba(17, 26, 68, 0.2);
+}
+.main .our-philosophy .content .description .text {
+  font-family: proxima-light;
+  font-size: 3.3vmin;
+  color: #111A44;
+  text-align: justify;
+  text-justify: inter-character;
+  -moz-text-align-last: center; /* Code for Firefox */
+  text-align-last: center;
+  max-width: 60vmin;
+  margin: 2%;
+}
+.main .our-philosophy .content .description .text .special{
+  font-family: proxima-semibold;
+  font-style: italic;
+}
+.main .our-philosophy .content .read-more {
+  height: 30vmin;
+  margin: 3vmin;
+}
+.main .our-philosophy .content .read-more .btn{
+  font-family: proxima-regular;
+  font-size: 2.3vmin;
+  margin: 2vmin;
+  color: #111A44;
+  width: 22vmin;
+  height: 7vmin;
+  border-color: #111A44;
+}
+
+
+/* supply Section
+* --------------------------------------- */
+
+.main .supply .content {
+	/* height: 100%; */
+	padding-bottom: 30vmin;
+}
+.main .supply .supply-box{
+	padding-top: 15vmin;
+	padding-left: 20vmin;
+	height: 100%;
+}
+.main .supply .supply-box .supplytext{
+	color: #4988d6;
+	font-size: 10vmin;
+	text-align: left;
+	font-family: proxima-light;
+	margin-bottom: 6vmin;
+}
+.main .supply .supply-box .mistaken{
+	color: #4988d6;
+	font-size: 5vmin;
+	text-align: left;
+	margin-left: 11vmin;
+	font-family: proxima-light;
+}
+.main .supply .supply-box .value{
+	color: #4988d6;
+	font-size: 10vmin;
+	text-align: left;
+	margin-left: 23vmin;
+	font-family: proxima-light;
+}
+.main .supply .supply-box-right {
+	padding-top: 15vmin;
+	/* padding-left: 5vmin; */
+	height: 100%;
+}
+.main .supply .supply-box-right .box{
+	background-color: #6699cc;
+	height: 9vmin;
+	width: 70%;
+	padding-top: 1vmin;
+	margin-left: 2vmin;
+	margin-top: 9vmin;
+	max-width: 80vmin;
+	min-width: 80vmin;
+}
+.main .supply .supply-box-right .box-text{
+	color: #ffffff;
+	font-family: proxima-semibold;
+	font-size: 2.5vmin;
+	max-width: 80vmin;
+	min-width: 80vmin;
+	text-align: justify;
+	/* left: 0; */
+	padding-left: 2vmin;
+	padding-right: 2vmin;
+  text-justify: inter-character;
+  -moz-text-align-last: left; /* Code for Firefox */
+  text-align-last: left;
+}
+.main .supply .supply-box-right .supply-description {
+	font-family: proxima-light;
+  font-size: 2.9vmin;
+  color: #111A44;
+  text-align: justify;
+	left: 0;
+  text-justify: inter-character;
+  -moz-text-align-last: left; /* Code for Firefox */
+  text-align-last: left;
+  max-width: 80vmin;
+	min-width: 80vmin;
+
+  margin: 2%;
+}
+/* Blog Section
+* --------------------------------------- */
+
+.main .blogs .content .head .title{
+  font-family: proxima-light;
+  font-size: 4vmin;
+  color: #4988d6;
+  border-bottom: 2px solid rgba(17, 26, 68, 0.2);
+  max-width: 7%;
+  margin: auto;
+}
+
+
+/* Defining each section background and styles
+* --------------------------------------- */
+body{
+  background-image: url(../image/blogs.jpg);
+	background-size: cover;
+}
+#our-philosophy{
+  /* background-image: url(../image/blogs.jpg); */
+  padding: 6% 0 0 0;
+}
+#supply{
+  /* background-image: url(../image/blogs.jpg); */
+  /* padding: 6% 0 0 0; */
+}
+#blogs{
+  /* background-image: url(../image/blogs.jpg); */
+}
+
+
+/*Adding background for the slides
+* --------------------------------------- */
+#slide1{
+  /* background-image: url(imgs/bg2.jpg); */
+  padding: 6% 0 0 0;
+}
+#slide2{
+  /* background-image: url(imgs/bg5.jpg); */
+  padding: 6% 0 0 0;
+}
+
+
+/* Bottom menu
+* --------------------------------------- */
+#infoMenu li a {
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.section-btn:hover {
+	color: #21b3e8;
+	background: #fff;
+}
+.section-img {
+	width: 50%;
+	float: left;
+}
+.section-img img {
+	width: 80%;
+}
+.section-row {
+	padding-bottom: 5em;
+}
+.section-foot {
+	background: #f5f5f5;
+	padding-bottom: 5em;
+}
+/* .aside {
+	background: #c3e2ed;
+	padding: 90px 0 90px;
+}
+.aside-top {
+	color: #7b7b7b;
+	font-family: Helvetica-Bold;
+	text-align: center;
+}
+.aside-h2 {
+	text-transform: uppercase;
+	margin: 0;
+	margin-bottom: 20px;
+}
+.aside-div {
+	background: #fff;
+} */
+.blog-carousel {
+	padding-top: 2em;
+}
+.owl-prev {
+	position: absolute;
+	left: -50px;
+	top: 50%;
+}
+.owl-prev i {
+	padding: 3px 11px;
+	border: 1px solid rgba(0,0,0,0);
+	color: #8e98a5;
+	transition: .5s;
+	font-size: 2em;
+	border-radius: 50%;
+}
+.owl-prev i:hover {
+	border-color: #8e98a5;
+}
+.owl-next {
+	position: absolute;
+	right: -50px;
+	float: right;
+	top: 50%;
+}
+.owl-next i {
+	padding: 3px 11px;
+	border: 1px solid rgba(0,0,0,0);
+	transition: .5s;
+	font-size: 2em;
+	border-radius: 50%;
+	color: #8e98a5;
+}
+.owl-next i:hover {
+	border-color: #8e98a5;
+}
+.blog-option {
+	width: 100%;
+	float: left;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.optin-img {
+	width: 100%;
+	float: left;
+	max-height: 250px;
+	min-height: 250px;
+}
+.optin-img img {
+	width: 100%;
+	max-height: 250px;
+	min-height: 250px;
+}
+.option-txt {
+	padding: 2em;
+	width: 100%;
+	float: left;
+	text-align: left;
+	color: #444444;
+	background: #fff;
+}
+.option-txt h4 {
+	margin: 0;
+	height: 40px;
+	font-family: proxima-regular;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.option-txt p {
+	height: 80px;
+	margin: 1em 0 2em;
+	font-family: proxima-regular;
+}
+.option-txt a {
+  font-family: proxima-regular;
+  font-size: .9em;
+  margin-top: 3em;
+  color: #111A44;
+  width: 100px;
+  text-align: center;
+  border-color: #111A44;
+  padding: 5px 0;
+  float: right;
+}
+.option-txt a:hover {
+	color: #ffffff;
+	background:  #4988d6;
+  border-color: #ffffff;
+}
+.owl-carousel .owl-nav.disabled {
+	display: block;
+}
+.carousel-row {
+	margin: 5em 0 0;
+}
+.article {
+	background: #f5f5f5;
+	padding: 60px 0 145px;
+}
+.team-div {
+	width: 100%;
+	float: left;
+}
+.team-img {
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+.team-img img {
+	width: 50% !important;
+	margin: 0 auto;
+	border-radius: 50%;
+	transition: .3s;
+	border: 5px solid rgba(0,0,0,0);
+}
+.team-div:hover img {
+	border-color: #badeeb;
+}
+.team-name {
+	width: 100%;
+	float: left;
+	margin-top: 1em;
+	text-align: center;
+	color: #525557;
+	font-family: proxima-regular;
+	font-size: 1.5em;
+	transition: .3s;
+}
+.team-div:hover .team-name {
+	color: #30a6d1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+	background: #2a2f33;
+	padding-top: 30px;
+	/* padding-bottom: 30px; */
+  height: 100%;
+}
+.foot-sp {
+	margin-left: 0;
+	margin-bottom: 20px;
+	width: 40px;
+	height: 3px;
+}
+.foot-con {
+	font-family: HelvLight-normal;
+	color: #fff;
+}
+.foot-con h4 {
+	color: #fff;
+	text-align: left;
+	font-size: 1.1em;
+}
+.foot-con i {
+	margin-right: 1em;
+	font-size: 1.5em;
+	vertical-align: middle;
+}
+.foot-con p {
+	font-size: 1em;
+	margin-bottom: 20px;
+}
+.ul-foot {
+	width: 100%;
+	float: left;
+	padding: 0;
+}
+.li-foot {
+	display: inline;
+	width: 20%;
+	float: left;
+}
+.li-foot a {
+	text-decoration: none;
+}
+.li-foot i {
+	color: #b6b8b9;
+	padding: 12px 13px;
+	font-size: 1.5em;
+	border-radius: 50%;
+	border: 1px solid rgba(0,0,0,0);
+}
+.li-foot i:hover {
+	border-color: #b6b8b9;
+}
+#padd {
+	padding: 12px 15px;
+}
+.p-foot {
+	width: 80%;
+	float: left;
+	margin-top: 43px;
+	font-size: 1.1em;
+	font-family: HelvLight-normal;
+}
+.footer-pro {
+	width: 100%;
+	float: left;
+}
+.footer-img {
+	width: 30%;
+	float: left;
+}
+.footer-img img {
+	width: 85px;
+	height: 55px;
+}
+.footer-txt {
+	width: 60%;
+	float: left;
+	padding: 1em 0 0 0;
+}
+.footer-txt h4 {
+	color: #fff;
+	margin: 0;
+	font-family: Helvetica;
+	font-family: 1.1em;
+}
+.footer-txt p {
+	font-family: HelvLight-normal;
+	font-size: .9em;
+}
+.foot-p-mark {
+	margin-top: 45px;
+}
