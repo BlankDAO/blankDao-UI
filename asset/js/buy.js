@@ -1,5 +1,3 @@
-// TODO: check availble token before buying
-// TODO: check white paper
 var crowdsaleContract = blankTkenContract = stableTokenContract = null;
 var enoughFund = false;
 
@@ -13,11 +11,6 @@ $('.just-number').keypress(function(eve) {
       $(this).val($(this).val().substring(1));
     }
   });
-});
-$('.just-number').on('input',function(e){
-    if ($(this).val().length == 0) {
-      $('#msg').css('color', 'white');
-    }
 });
 
 function clearInputs() {
@@ -154,12 +147,22 @@ function checkBalance(balance, coin) {
     let unitPrice = result.c[0] / 10000;
     let calAmount;
     if (coin == 'bdt') {
-      let bdt = document.getElementById('bdt').value;
+      let bdt = $('#bdt').val();
+      if ( !bdt || parseFloat(bdt) <= 0) {
+        $('#msg').css('color', 'white');
+        $('#dai').val('');
+        return;
+      }
       calAmount = bdt * unitPrice;
       $('#dai').val(calAmount);
     }
     else {
-      let dai = document.getElementById('dai').value;
+      let dai = $('#dai').val();
+      if ( !dai || parseFloat(dai) <= 0) {
+        $('#msg').css('color', 'white');
+        $('#bdt').val('');
+        return;
+      }
       calAmount = dai / unitPrice;
       $('#bdt').val(calAmount);
     }
@@ -273,12 +276,12 @@ Timer = (function(){
   var self = {};
   self.second = 0;
   self.counter = null;
-  self.element = null; 
+  self.element = null;
 
   self.start = function(id) {
     self.element = id;
     self.second = self.minute = self.hour = 0;
-    self.counter = setInterval(function(){ 
+    self.counter = setInterval(function(){
       self.second++;
       let minute = 0;
       let second = 0;
