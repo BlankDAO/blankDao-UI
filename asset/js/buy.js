@@ -1,3 +1,5 @@
+// TODO: check availble token before buying
+// TODO: check white paper
 var crowdsaleContract = blankTkenContract = stableTokenContract = null;
 var enoughFund = false;
 
@@ -185,6 +187,15 @@ function stableTokenBalance(coin) {
 
 
 function buy() {
+  if ( parseInt($('#av-token').html()) <= 0 ) {
+    Swal.fire({
+      type: 'error',
+      title: 'NOT ENOUGH TOKEN FOR BUYING',
+      text: 'Please Try Again In Next 10 Minutes',
+      footer: ''
+    });
+    return;
+  }
   val = $('#bdt').val();
   if ( val < 1  || val > 10000 ) {
     Swal.fire({
@@ -238,7 +249,6 @@ function buy() {
 
 function checkBuyTX(hash) {
   changeActiveStep(4);
-  $('#proccess').html('Step-2:<br>Transaction Hash is: <a target="_blank" href="https://etherscan.io/tx/'+hash+'">' + hash + "</a>");
   web3.eth.getTransactionReceipt(hash, function(error, result) {
     if (error) {
       console.error(error);
@@ -297,7 +307,6 @@ Timer = (function(){
 
 function checkApproveResult(hash) {
   changeActiveStep(2);
-  $('#proccess').html('Step-1:<br>Transaction Hash is: <a target="_blank" href="https://etherscan.io/tx/'+hash+'">' + hash + "</a>");
   web3.eth.getTransactionReceipt(hash, function(error, result) {
     if (error) {
       console.error(error);

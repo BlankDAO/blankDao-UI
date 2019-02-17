@@ -50,6 +50,10 @@ a {
   background-color: white;
 }
 
+#partners-sec {
+  background-color: white;
+}
+
 #buy-token {
   background-color: white;
 }
@@ -519,7 +523,70 @@ a {
 }
 
 
+/* Parteners Section
+* --------------------------------------- */
 
+.main .partners-sec .title {
+  font-family: proxima-regular;
+  font-size: 11vmin;
+  margin-bottom: 15%;
+}
+
+.main .partners-sec .head .logo {
+  margin: 3vmin;
+}
+
+.main .partners-sec .left-side:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(25%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.main .partners-sec .left-side img{
+  height: 18vmin;
+}
+
+.main .partners-sec .left-side span{
+  font-size: 5vmin;
+  font-family: proxima-regular;
+}
+
+.main .partners-sec .right-side:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(25%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.main .partners-sec .right-side {
+  margin-top: 4vmin;
+}
+
+.main .partners-sec .right-side img{
+  height: 10vmin;
+}
+
+.main .partners-sec .right-side p{
+  font-size: 5vmin;
+  font-family: proxima-regular;
+}
+
+.main .partners-sec img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.main .partners-sec .content .description {
+  font-family: proxima-light;
+  font-size: 2vmin;
+}
 
 
 /* Buy Tokens Section
