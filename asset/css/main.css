@@ -807,6 +807,10 @@ a {
   filter: grayscale(100%);
 }
 
+.claim-rewards .description .step-extra img:hover {
+  cursor: pointer;
+}
+
 .claim-rewards .description .step-extra div {
   float: left;
 }
