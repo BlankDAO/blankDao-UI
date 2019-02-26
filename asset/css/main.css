@@ -528,12 +528,12 @@ a {
 .main .model-sec .title {
   font-family: proxima-regular;
   font-size: 5vmin;
-  margin-top: 25%;
+  margin-top: 5vmin;
 }
 
 .main .model-sec .description img {
-  height: 550px;
-  /*margin-top: 5%;*/
+  height: 50vmin;
+  margin-top: 5%;
 }
 
 
