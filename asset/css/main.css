@@ -522,6 +522,20 @@ a {
   height: 7vmin;
 }
 
+/* MODEL Section
+* --------------------------------------- */
+
+.main .model-sec .title {
+  font-family: proxima-regular;
+  font-size: 5vmin;
+  margin-top: 25%;
+}
+
+.main .model-sec .description img {
+  height: 550px;
+  /*margin-top: 5%;*/
+}
+
 
 /* Parteners Section
 * --------------------------------------- */
