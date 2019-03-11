@@ -532,7 +532,7 @@ a {
 }
 
 .main .model-sec .description img {
-  height: 70vmin;
+  /*height: 70vmin;*/
   margin-top: 5%;
 }
 
@@ -908,6 +908,31 @@ a {
   color: white;
   border-color: white;
 }
+
+/* Contributors Section
+* --------------------------------------- */
+
+.main .contributor .content .head .title {
+  font-family: proxima-regular;
+  font-size: 9vmin;
+  margin-bottom: 30%;
+}
+.main .contributor .profile img {
+  height: 15vmin;
+  border-radius: 100px;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+.main .contributor .profile .name {
+  font-family: proxima-semibold;
+  font-size: 2vmin;
+  margin-top: 1%;
+}
+.main .contributor .profile .postion {
+  font-family: proxima-thin;
+  font-size: 2vmin;
+}
+
 /* Road Map Section
 * --------------------------------------- */
 
