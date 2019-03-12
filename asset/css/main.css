@@ -535,7 +535,9 @@ a {
   /*height: 70vmin;*/
   margin-top: 5%;
 }
-
+.model-img {
+  height: 80vmin;
+}
 
 /* Parteners Section
 * --------------------------------------- */
