@@ -9,7 +9,7 @@ var myFullpage = new fullpage('#main', {
     scrollHorizontally: true,
     licenseKey: 'C74E309E-891D44FF-980DCF32-4E4E704B',
     menu: '#myMenu',
-    anchors: ['home', 'blankDAO', 'possibilities', 'partners', 'buy', 'rewards','roadmap', 'model','f'],
+    anchors: ['home', 'blankDAO', 'possibilities', 'partners', 'buy', 'rewards', 'model', 'contributors', 'f'],
 });
 
 $(document).ready(function () {
