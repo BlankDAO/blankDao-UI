@@ -2,17 +2,18 @@ var globalTimer = null;
 var pointerPause = false;
 var pointerState = 0;
 
-var myFullpage = new fullpage('#main', {
-    navigation: true,
-    scrollingSpeed: 1000,
-    slidesNavigation: true,
-    scrollHorizontally: true,
-    licenseKey: 'C74E309E-891D44FF-980DCF32-4E4E704B',
-    menu: '#myMenu',
-    anchors: ['home', 'blankDAO', 'active-projects', 'partners', 'buy', 'rewards', 'model', 'contributors', 'f'],
-});
 
 $(document).ready(function () {
+
+  var myFullpage = new fullpage('#main', {
+      navigation: true,
+      scrollingSpeed: 1000,
+      // slidesNavigation: true,
+      // scrollHorizontally: true,
+      licenseKey: 'C74E309E-891D44FF-980DCF32-4E4E704B',
+      menu: '#myMenu',
+      anchors: ['home', 'blankDAO', 'active-projects', 'partners', 'tokens', 'rewards', 'model', 'contributors', 'f'],
+  });
     collapseWorker();
     setTimeout(function () {
         $('body').css("visibility", "visible");
