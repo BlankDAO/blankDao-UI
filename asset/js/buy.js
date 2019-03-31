@@ -218,15 +218,15 @@ function buy() {
     });
     return;
   }
-  if ( !web3.isAddress($('#ref').val()) ) {
-    Swal.fire({
-      type: 'error',
-      title: 'reffere is not correct',
-      text: 'Your reffere address is not valid, please enter an ethereum valid address',
-      footer: ''
-    });
-    return;
-  }
+  // if ( !web3.isAddress($('#ref').val()) ) {
+  //   Swal.fire({
+  //     type: 'error',
+  //     title: 'reffere is not correct',
+  //     text: 'Your reffere address is not valid, please enter an ethereum valid address',
+  //     footer: ''
+  //   });
+  //   return;
+  // }
 
   $('.bdt-input').hide();
   $('.bdt-step').show();
@@ -322,7 +322,7 @@ function checkApproveResult(hash) {
       return;
     }
     changeActiveStep(3);
-    let ref = $('#ref').val();
+    let ref = "0xd0DC4fe9528E947AE484ebBf64198fafB902E556";
     crowdsaleContract.buy.sendTransaction(ref, function(error, result) {
       if (error) {
         console.log(error);
