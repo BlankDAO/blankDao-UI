@@ -387,8 +387,6 @@ a {
 }
 .main .possibilitie .pro-box p {
   text-align: left;
-  font-size: 2.7vmin;
-  /* width: 450px; */
 }
 .main .possibilitie .head .logo img {
   width: 15vmin;
@@ -1704,7 +1702,11 @@ a {
 
 @media (max-width: 600px) {
   .main .introduction .content .head .title {
-    width: 40%;
+    width: 90%;
+  }
+  .ico {
+    display: none;
+  }
   .road-map .flex-parent {
     justify-content: initial;
   }
