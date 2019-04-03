@@ -377,19 +377,19 @@ a {
     /* box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2); */
     margin-bottom: 3%;
 }
-.main .possibilitie .pro-box h3 {
+.main .possibilitie .pro-box h5 {
   color: black;
-  /* float: left; */
   text-align: left;
   font-family: proxima-Semibold;
   padding-right: 5%;
 }
-.main .possibilitie .pro-box h3 a {
+.main .possibilitie .pro-box a {
   color: black;
 }
 .main .possibilitie .pro-box p {
   text-align: left;
-  width: 450px;
+  /* font-size: 1.2vmin; */
+  /* width: 450px; */
 }
 .main .possibilitie .head .logo img {
   width: 15vmin;
@@ -572,7 +572,7 @@ a {
 .main .partners-sec .title {
   font-family: proxima-regular;
   font-size: 11vmin;
-  margin-bottom: 15%;
+  margin-bottom: 5%;
 }
 
 .main .partners-sec .head .logo {
