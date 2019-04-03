@@ -270,7 +270,6 @@ a {
 
 .main .introduction .content .head .title {
   width: 40%;
-  left: 20px;
 }
 
 .main .introduction .content .head {
@@ -388,7 +387,7 @@ a {
 }
 .main .possibilitie .pro-box p {
   text-align: left;
-  /* font-size: 1.2vmin; */
+  font-size: 2.7vmin;
   /* width: 450px; */
 }
 .main .possibilitie .head .logo img {
@@ -577,6 +576,10 @@ a {
 
 .main .partners-sec .head .logo {
   margin: 3vmin;
+}
+
+.main .partners-sec .part {
+  margin-bottom: 10%;
 }
 
 .main .partners-sec .left-side:hover {
@@ -1700,6 +1703,8 @@ a {
 }
 
 @media (max-width: 600px) {
+  .main .introduction .content .head .title {
+    width: 40%;
   .road-map .flex-parent {
     justify-content: initial;
   }
