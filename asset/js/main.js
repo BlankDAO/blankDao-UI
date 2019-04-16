@@ -5,6 +5,8 @@ var pointerState = 0;
 
 $(document).ready(function () {
 
+  $('.ref-box').select2();
+
   var myFullpage = new fullpage('#main', {
       navigation: true,
       scrollingSpeed: 1000,

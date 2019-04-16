@@ -322,7 +322,8 @@ function checkApproveResult(hash) {
       return;
     }
     changeActiveStep(3);
-    let ref = "0xd0DC4fe9528E947AE484ebBf64198fafB902E556";
+    // let ref = "0xd0DC4fe9528E947AE484ebBf64198fafB902E556";
+    let ref = $('.ref-box').val();
     crowdsaleContract.buy.sendTransaction(ref, function(error, result) {
       if (error) {
         console.log(error);
