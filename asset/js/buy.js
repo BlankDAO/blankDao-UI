@@ -68,6 +68,13 @@ function updateBDTamount() {
 }
 
 elementInit = function () {
+  Swal.fire({
+    type: "Info",
+    title: "Under Development",
+    imageUrl: 'https://www.valuecoders.com/blog/wp-content/uploads/2017/12/chatbots-AI.gif',
+    footer: ""
+  });
+  return;
   $("#msg").html("Waiting for input");
   $("#msg").css("color", "white");
   $(".bdt-step").hide();
@@ -355,6 +362,13 @@ Selling Script
 **************************/
 
 function sellInit() {
+  Swal.fire({
+    type: "Info",
+    title: "Under Development",
+    imageUrl: 'https://www.valuecoders.com/blog/wp-content/uploads/2017/12/chatbots-AI.gif',
+    footer: ""
+  });
+  return;
   metaMaskInit(false);
   $("#sellModal").modal({
     backdrop: "static",
