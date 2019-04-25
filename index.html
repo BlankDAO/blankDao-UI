@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="asset/css/morphext.css" />
   <link rel="stylesheet" href="asset/css/animate.css" />
   <link rel="stylesheet" href="asset/css/owl.theme.default.min.css" />
-  <link rel="stylesheet" type="text/css" href="asset/css/main.css?v=5.4" />
+  <link rel="stylesheet" type="text/css" href="asset/css/main.css?v=6.0" />
 </head>
 
 <body style="visibility: hidden;">
@@ -213,23 +213,22 @@ by relying on real people instead of  miners.
         </div>
         <div class="col col-12 row  description">
           <div class="col col-sm-12 col-md-12 col-lg-3 offset-lg-3 left-slide">
-            <p class="c-price">Current Value</p>
+            <p class="c-price">Reclaim Value</p>
             <div style="display: inline-flex;margin-bottom: 2.2vmin;margin-top: 6%">
-              <div class="c-price-num">1.00</div>
+              <div class="c-price-num">1.08</div>
               <div class="price-abbr">DAI</div>
             </div>
           </div>
-          <div class="col col-sm-12 col-md-12 col-lg-3 right-slide">
-            <p class="c-price">Available Tokens</p>
-            <p class="c-price" style="opacity:0">For</p>
-            <div style="display: inline-flex;margin-bottom: 5%;">
-              <div class="c-price-num"><span id="av-token"></span>K</div>
-              <div class="price-abbr">BDT</div>
+          <div class="col col-sm-12 col-md-12 col-lg-3 left-slide">
+            <p class="c-price">Current Value</p>
+            <div style="display: inline-flex;margin-bottom: 2.2vmin;margin-top: 6%">
+              <div class="c-price-num">1.18</div>
+              <div class="price-abbr">DAI</div>
             </div>
           </div>
           <div class="read-more col-sm-12 col-md-12 col-lg-3 offset-lg-3">
             <button type="button" onclick="sellInit()" class="btn btn-outline-secondary">
-              Sell
+              Reclaim
             </button>
           </div>
           <div class="read-more col-sm-12 col-md-12 col-lg-3">
@@ -238,8 +237,10 @@ by relying on real people instead of  miners.
             </button>
           </div>
           <div class="col col-12" style="margin-top: 3%;">
-            <a style="color: black; font-size: 3vmin;font-family: proxima-light;">Total Supply: <span
-                id="total-supply"></span>K BDT</a>
+            <a style="color: black; font-size: 3vmin;font-family: proxima-light;">Total Supply: <span id="total-supply">
+              </span>K BDT</a>
+            <br>
+            <a class="c-price">Available Tokens: <span id="av-token"></span>K BDT</a>
           </div>
         </div>
       </div>
@@ -850,6 +851,36 @@ by relying on real people instead of  miners.
                 </div>
               </div>
             </div>
+            <div class="sprator"></div>
+            <div class="col col-12 row justify-content-center step-box step-box-3">
+              <div class="col col-1">
+                <img src="asset/image/metamask.png" height="30" />
+              </div>
+              <div class="col col-8">
+                <p class="t-text">Waiting for MetaMask Confirmation</p>
+              </div>
+              <div class="col col-2">
+                <div class="loader"></div>
+                <div class="confirm-icon">
+                  <img src="asset/image/confirm.png" height="30" />
+                </div>
+              </div>
+            </div>
+            <div class="sprator"></div>
+            <div class="col col-12 row justify-content-center step-box step-box-4">
+              <div class="col col-1">
+                <img src="asset/image/trx.png" height="30" />
+              </div>
+              <div class="col col-8">
+                <p class="t-text">Waiting for Transaction Confirmation</p>
+              </div>
+              <div class="col col-2">
+                <div class="loader"></div>
+                <div class="confirm-icon">
+                  <img src="asset/image/confirm.png" height="30" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -870,16 +901,17 @@ by relying on real people instead of  miners.
   <script src="asset/js/owl.carousel.min.js"></script>
   <script type="text/javascript" src="asset/js/pointerList.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-  <script type="text/javascript" src="asset/js/main.js?v=5.4"></script>
+  <script type="text/javascript" src="asset/js/main.js?v=6.0"></script>
   <script type="text/javascript" src="asset/js/abiBlankToken.js"></script>
+  <script type="text/javascript" src="asset/js/abiSell.js"></script>
   <script type="text/javascript" src="asset/js/abiCrowdSale.js"></script>
   <script type="text/javascript" src="asset/js/abiStableToken.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
   <script type="text/javascript" src="asset/js/web3.min.js"></script>
   <link href="asset/css/select2.min.css" rel="stylesheet" />
   <script src="asset/js/select2.min.js"></script>
-  <script type="text/javascript" src="asset/js/config.js?v=5.4"></script>
-  <script type="text/javascript" src="asset/js/buy.js?v=5.4"></script>
+  <script type="text/javascript" src="asset/js/config.js?v=6.0"></script>
+  <script type="text/javascript" src="asset/js/buy.js?v=6.0"></script>
   <link rel="stylesheet/less" type="text/css" href="asset/css/styles.less" />
   <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
 </body>

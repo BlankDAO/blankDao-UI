@@ -1,4 +1,4 @@
-var crowdsaleContract = (blankTkenContract = stableTokenContract = null);
+var crowdsaleContract = (blankTkenContract = stableTokenContract = sellContract = null);
 var enoughFund = false;
 
 $(".just-number").keypress(function (eve) {
@@ -38,12 +38,12 @@ function updateBDTamount() {
   let rpcUrl = "https://mainnet.infura.io/v3/81a17a01107e4ac9bf8a556da267ae2d";
   var InfuraWeb3 = new Web3(new Web3.providers.HttpProvider(rpcUrl));
   var crowdsale_contract_ = InfuraWeb3.eth.contract(abiCrowdsale);
-  let crowdsaleContract_ = crowdsale_contract_.at(crowdsaleAddress);
+  let crowdsaleContract_ = crowdsale_contract_.at(config.crowdsaleAddress);
 
   var blank_token_contract_ = InfuraWeb3.eth.contract(abiBlankToken);
-  let blankTkenContract_ = blank_token_contract_.at(blankTokenAddress);
+  let blankTkenContract_ = blank_token_contract_.at(config.blankTokenAddress);
 
-  blankTkenContract_.balanceOf(crowdsaleAddress, function (error, result) {
+  blankTkenContract_.balanceOf(config.crowdsaleAddress, function (error, result) {
     if (error) {
       return;
     }
@@ -84,13 +84,12 @@ elementInit = function () {
 };
 
 metaMaskInit = function (init = true) {
-  Swal.fire({
-    type: "Info",
-    title: "Under Development",
-    imageUrl: 'https://www.valuecoders.com/blog/wp-content/uploads/2017/12/chatbots-AI.gif',
-    footer: ""
-  });
-  return;
+  // Swal.fire({
+  //   title: "Under Development",
+  //   imageUrl: '../asset/image/chatbots-AI.gif',
+  //   footer: ""
+  // });
+  // return;
   if (init) elementInit();
   enoughFund = false;
   if (typeof web3 === "undefined") {
@@ -140,13 +139,17 @@ metaMaskInit = function (init = true) {
   web3.eth.defaultAccount = web3.eth.accounts[0];
 
   var crowdsale_contract = web3.eth.contract(abiCrowdsale);
-  crowdsaleContract = crowdsale_contract.at(crowdsaleAddress);
+  crowdsaleContract = crowdsale_contract.at(config.crowdsaleAddress);
 
   var blank_token_contract = web3.eth.contract(abiBlankToken);
-  blankTkenContract = blank_token_contract.at(blankTokenAddress);
+  blankTkenContract = blank_token_contract.at(config.blankTokenAddress);
 
   var stable_token_contract = web3.eth.contract(abiStableToken);
-  stableTokenContract = stable_token_contract.at(stableTokenAddress);
+  stableTokenContract = stable_token_contract.at(config.stableTokenAddress);
+
+  var sell_contract = web3.eth.contract(abiSell);
+  sellContract = sell_contract.at(config.sellingAddress);
+
 };
 
 // TODO: Fix this function
@@ -254,7 +257,7 @@ function buy() {
   changeActiveStep(1);
 
   let dei = parseFloat($("#dai").val()) * 10 ** 18;
-  stableTokenContract.approve.sendTransaction(crowdsaleAddress, dei, function (
+  stableTokenContract.approve.sendTransaction(config.crowdsaleAddress, dei, function (
     error,
     result
   ) {
@@ -268,12 +271,12 @@ function buy() {
       });
       return;
     }
-    checkApproveResult(result);
+    checkApproveResult(result, buyConfrim);
   });
   $("#buy-btn").prop("disabled", true);
 }
 
-function checkBuyTX(hash) {
+function checkTX(hash, type = 'buy') {
   changeActiveStep(4);
   web3.eth.getTransactionReceipt(hash, function (error, result) {
     if (error) {
@@ -282,13 +285,14 @@ function checkBuyTX(hash) {
     }
     if (result == null) {
       setTimeout(function () {
-        checkBuyTX(hash);
+        checkTX(hash, type);
       }, 5000);
       return;
     }
     changeActiveStep(5);
+    let msg = type == 'buy' ? 'Purchase' : 'Sell'
     Swal.fire(
-      "Purchase Done Successfully",
+      msg + " Done Successfully",
       "Please Check Your Account",
       "success"
     );
@@ -329,7 +333,18 @@ Timer = (function () {
   return self;
 })();
 
-function checkApproveResult(hash) {
+function buyConfrim() {
+  let ref = $(".ref-box").val();
+  crowdsaleContract.buy.sendTransaction(ref, function (error, result) {
+    if (error) {
+      console.log(error);
+      return;
+    }
+    checkTX(result, 'buy');
+  });
+}
+
+function checkApproveResult(hash, cb) {
   changeActiveStep(2);
   web3.eth.getTransactionReceipt(hash, function (error, result) {
     if (error) {
@@ -338,20 +353,12 @@ function checkApproveResult(hash) {
     }
     if (result == null) {
       setTimeout(function () {
-        checkApproveResult(hash);
+        checkApproveResult(hash, cb);
       }, 5000);
       return;
     }
     changeActiveStep(3);
-    // let ref = "0xd0DC4fe9528E947AE484ebBf64198fafB902E556";
-    let ref = $(".ref-box").val();
-    crowdsaleContract.buy.sendTransaction(ref, function (error, result) {
-      if (error) {
-        console.log(error);
-        return;
-      }
-      checkBuyTX(result);
-    });
+    cb();
   });
 }
 
@@ -361,14 +368,11 @@ Selling Script
 *************************
 **************************/
 
+
+var BDTPrice = 0;
+var allowToSell = false;
+
 function sellInit() {
-  Swal.fire({
-    type: "Info",
-    title: "Under Development",
-    imageUrl: 'https://www.valuecoders.com/blog/wp-content/uploads/2017/12/chatbots-AI.gif',
-    footer: ""
-  });
-  return;
   metaMaskInit(false);
   $("#sellModal").modal({
     backdrop: "static",
@@ -383,7 +387,6 @@ function sellInit() {
   $(".loader").hide();
 }
 
-function BDTPrice() {}
 
 function calculateDAI() {
   let bdt = $("#sellBdt").val();
@@ -396,55 +399,79 @@ function calculateDAI() {
     if (error) {
       return;
     }
-    let unitPrice = result.c[0] / 10000;
-    let dai = unitPrice * $("#sellBdt").val();
-    $("#sellMsg").css("color", "black");
-    $("#sellMsg").html("You Will Recive " + dai + " DAI");
+    let unitPrice = (result.c[0] - 1000) / 10000;
+    let dai = unitPrice * bdt;
+
+    blankTkenContract.balanceOf(web3.eth.defaultAccount, function (error, result) {
+      if (error) {
+        return;
+      }
+      let balance = result.c[0] / 10000;
+      if (bdt > balance) {
+        allowToSell = false;
+        $("#sellMsg").css("color", "red");
+        $("#sellMsg").html("Not Enough BDT");
+      } else {
+        allowToSell = true;
+        $("#sellMsg").css("color", "black");
+        $("#sellMsg").html("You Will Recive " + dai + " DAI");
+      }
+    });
+
   });
 }
 
+
 function sell() {
+  if (!allowToSell) {
+    Swal.fire({
+      type: "error",
+      title: "Invalid Request",
+      text: "You Haven't Enough BDT",
+    });
+    return;
+  };
   $("#sellMsg").html("Waiting for input");
   $("#sellMsg").css("color", "white");
-  let bdt = parseInt($("#sellBdt").val());
-  if (bdt < 1 || bdt > 1000) {
+  let bdt = parseFloat($("#sellBdt").val());
+  if (bdt < 1 || bdt > 1000 || isNaN(bdt)) {
     Swal.fire({
       type: "error",
       title: "incorect value",
       text: "Your value should between 1 - 1000",
-      footer: ""
     });
     return;
   }
-  requestApproval(bdt);
+  $(".bdt-input").hide();
+  $(".bdt-step").show();
+  changeActiveStep(1);
+
+  bdt = bdt * 10 ** 18;
+  blankTkenContract.approve.sendTransaction(config.sellingAddress, bdt, function (
+    error,
+    result
+  ) {
+    if (error) {
+      console.log(error);
+      Swal.fire({
+        type: "error",
+        title: "Something wrong",
+        text: "Error message: " + String(error.message),
+      });
+      return;
+    }
+    checkApproveResult(result, sellConfrim);
+  });
+  $("#sell-btn").prop("disabled", true);
 }
 
-function requestApproval(bdt) {
-  blankTkenContract.transfer(
-    config.sellingAddress,
-    bdt * 10 ** 18,
-    function (error, result) {
-      if (result) {
-        let url = "https://etherscan.io/tx/" + result;
-        let link = "<a href='" + url + "' target='_blank'>View Transaction</a>";
-        let msg = "<br>You Will Recive Your DAI In Next 24 Hours";
-        $("#sellMsg").css("color", "black");
-        $("#sellMsg").html("Transaction Send to Network: " + link + msg);
-        Swal.fire({
-          type: "success",
-          title: "Done",
-          html: "Transaction Send to Network: " + link + msg,
-          footer: link
-        });
-      } else if (error) {
-        Swal.fire({
-          type: "error",
-          title: "Failed",
-          html: error.message
-        });
-        console.error(error.message);
-        console.log("You rejected the transaction");
-      }
+
+function sellConfrim() {
+  sellContract.sell(function (error, result) {
+    if (error) {
+      console.log(error);
+      return;
     }
-  );
+    checkTX(result, 'sell');
+  });
 }
